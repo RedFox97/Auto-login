@@ -1,0 +1,10 @@
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\bin\Debug\Auto Login WF app.exe.config
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\bin\Debug\Auto Login WF app.exe
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\bin\Debug\Auto Login WF app.pdb
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto Login WF app.csprojAssemblyReference.cache
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto_Login_WF_app.Form1.resources
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto_Login_WF_app.Properties.Resources.resources
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto Login WF app.csproj.GenerateResource.cache
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto Login WF app.csproj.CoreCompileInputs.cache
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto Login WF app.exe
+E:\GitHub\Auto-login\Auto-login-WF-app\Auto-Login\Auto Login WF app\obj\Debug\Auto Login WF app.pdb

@@ -63,5 +63,10 @@ namespace Auto_Login_WF_app
         {
             COM.WriteLine(psk.Text);
         }
+
+        private void COMList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,19 +8,17 @@
 #include <Keyboard.h>
 #include <EEPROM.h>
 
-#define button          4
-#define led         7
+#define button  4
+#define led     7
 
 unsigned long lastDebounceTime, debounceDelay = 100;
-int lastButtonState, buttonState, ledState = LOW;
-String duLieu;
+int           lastButtonState, buttonState, ledState = LOW;
+String        duLieu;
 
 // Khởi tạo Serial, EEPROM, pinMode
 void setup(){
   Serial.begin(9600);
-  pinMode(up, INPUT_PULLUP);
   pinMode(button, INPUT_PULLUP);
-  pinMode(down, INPUT_PULLUP);
   pinMode(led, OUTPUT);
 }
 
@@ -34,7 +32,8 @@ void loop() {
       buttonState = digitalRead(button);                // Lưu trạng thái bấm nút mới
       if (buttonState == HIGH) {                        // Nếu nút đã được nhả thì thay đổi trạng thái led và gõ mật khẩu
         if(duLieu == "")                                // Kiểm tra đã có mật khẩu lưu vào biến duLieu chưa, nếu chưa đọc lại từ EEPROM
-          duLieu = readEEPROM();
+          duLieu = readEEPROM(0);
+        Serial.println("Dữ liệu: "+ duLieu);
         Keyboard.print(duLieu);
       }
     }
@@ -56,33 +55,33 @@ void nhanDuLieu() {
     digitalWrite(led, HIGH);
     delay(500);
     digitalWrite(led, LOW);
-    writeEEPROM(duLieu);
+    writeEEPROM(0, duLieu);
   }
 }
 
 //Lưu dữ liệu vào EEPROM, từ byte 0
-void writeEEPROM(String data)
+void writeEEPROM(int viTri, String data)
 {
   int _size = data.length();
   for(int i=0; i<_size; i++)
   {
-    EEPROM.write(i,data[i]);
+    EEPROM.write(viTri + i,data[i]);
   }
   EEPROM.write(_size,'\0');
   EEPROM.end();
 }
 
 // Đọc dữ liệu từ EEPROM cho tới kí tự NULL
-String readEEPROM() {
-  char data[100]; //Max 100 Bytes
-  int len;
-  unsigned char value;
-  while(value != '\0')   // Đọc đến kí tự NULL
-  {    
-    value = EEPROM.read(len);
-    data[len] = value;
-    len++;
+String readEEPROM(int viTri) {
+  String  data;
+  char    value;
+  value = EEPROM.read(viTri);
+  while(value != '\0') {   // Đọc đến kí tự NULL   
+    value = EEPROM.read(viTri);
+    Serial.println(String(viTri) + "\t" + String(value)); 
+    data += String(value);
+    viTri++;
   }
-  data[len]='\0';
-  return String(data);
+  data +="\0";
+  return data;
 }
